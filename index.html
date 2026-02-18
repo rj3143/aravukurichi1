@@ -1,559 +1,955 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MLA Elangovan | Aravakurichi DMK</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MLA Elangovan | Aravakurichi DMK</title>
 
-<style>
+  <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
-    body{background:#0b0b0b;color:white;overflow-x:hidden;}
+    body{background:#070707;color:#fff;overflow-x:hidden;}
+    html{scroll-behavior:smooth;}
 
     :root{
-        --dmk-red:#d50000;
-        --dmk-black:#000;
-        --dmk-white:#fff;
-        --dmk-gray:#bdbdbd;
+      --dmk-red:#d50000;
+      --dmk-black:#000000;
+      --dmk-yellow:#ffeb3b;
+      --text-gray:#dcdcdc;
+      --card:#101010;
+      --border:#2c2c2c;
     }
 
     /* HEADER */
     header{
-        width:100%;
-        background:linear-gradient(90deg,#000,#d50000);
-        padding:15px 25px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        position:sticky;
-        top:0;
-        z-index:999;
-        border-bottom:2px solid #ffeb3b;
+      width:100%;
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:linear-gradient(90deg,#000,#b00000,#000);
+      border-bottom:2px solid var(--dmk-yellow);
+      padding:12px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .logo-area{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .sun-icon{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      background:radial-gradient(circle, var(--dmk-yellow), #ff9800);
+      border:2px solid #fff;
+      box-shadow:0 0 20px rgba(255,235,59,0.3);
+      position:relative;
+    }
+
+    .sun-icon:before{
+      content:"";
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:#fff;
+      opacity:0.4;
     }
 
     header h1{
-        font-size:20px;
-        font-weight:bold;
-        color:white;
-        letter-spacing:1px;
+      font-size:16px;
+      letter-spacing:0.6px;
+      line-height:1.2;
+    }
+
+    header h1 span{
+      color:var(--dmk-yellow);
+      font-weight:bold;
     }
 
     nav{
-        display:flex;
-        gap:18px;
-        flex-wrap:wrap;
-        align-items:center;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      align-items:center;
     }
 
     nav a{
-        text-decoration:none;
-        color:white;
-        font-size:14px;
-        font-weight:bold;
-        padding:6px 10px;
-        border-radius:6px;
-        transition:0.3s;
+      text-decoration:none;
+      color:white;
+      font-size:13px;
+      font-weight:bold;
+      padding:7px 10px;
+      border-radius:8px;
+      transition:0.3s;
     }
+
     nav a:hover{
-        background:#ffeb3b;
-        color:black;
+      background:var(--dmk-yellow);
+      color:black;
     }
 
     .lang-btn{
-        background:#ffeb3b;
-        color:black;
-        border:none;
-        padding:7px 14px;
-        font-weight:bold;
-        border-radius:6px;
-        cursor:pointer;
-        transition:0.3s;
+      border:none;
+      cursor:pointer;
+      background:var(--dmk-yellow);
+      color:black;
+      font-weight:bold;
+      padding:8px 12px;
+      border-radius:8px;
+      transition:0.3s;
     }
+
     .lang-btn:hover{
-        background:white;
+      background:white;
+      transform:scale(1.04);
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero{
-        width:100%;
-        min-height:85vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:40px 20px;
-        background:linear-gradient(to bottom,#000,#1a0000,#000);
-        position:relative;
-        overflow:hidden;
+      width:100%;
+      min-height:92vh;
+      padding:50px 20px;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      background:linear-gradient(to bottom,#000,#1a0000,#000);
     }
 
-    /* DMK Flag effect */
-    .flag-bg{
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        opacity:0.18;
-        background:linear-gradient(120deg,#d50000 50%,#000 50%);
-        z-index:0;
+    .hero:before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:linear-gradient(110deg,var(--dmk-red) 50%, #000 50%);
+      opacity:0.18;
+      z-index:0;
     }
 
     .hero-content{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        max-width:1200px;
-        width:100%;
-        z-index:5;
-        gap:40px;
-        flex-wrap:wrap;
+      z-index:5;
+      max-width:1200px;
+      width:100%;
+      display:flex;
+      gap:40px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
     }
 
     .hero-text{
-        flex:1;
-        min-width:320px;
+      flex:1;
+      min-width:320px;
     }
 
     .hero-text h2{
-        font-size:38px;
-        color:#ffeb3b;
-        margin-bottom:12px;
+      font-size:44px;
+      color:var(--dmk-yellow);
+      margin-bottom:10px;
     }
 
     .hero-text h3{
-        font-size:22px;
-        margin-bottom:15px;
-        color:white;
+      font-size:22px;
+      margin-bottom:12px;
+      color:white;
+      font-weight:bold;
     }
 
     .hero-text p{
-        font-size:15px;
-        line-height:1.7;
-        color:#e0e0e0;
-        margin-bottom:20px;
+      font-size:15px;
+      line-height:1.9;
+      color:var(--text-gray);
+      margin-bottom:18px;
     }
 
-    .hero-text .btn{
-        display:inline-block;
-        text-decoration:none;
-        background:#ffeb3b;
-        color:black;
-        font-weight:bold;
-        padding:12px 22px;
-        border-radius:10px;
-        transition:0.3s;
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
     }
 
-    .hero-text .btn:hover{
-        background:white;
-        transform:scale(1.05);
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      background:var(--dmk-yellow);
+      color:black;
+      padding:12px 18px;
+      font-weight:bold;
+      border-radius:12px;
+      transition:0.3s;
+      font-size:14px;
     }
 
-    /* MAIN MLA IMAGE (CENTERED FULL FACE) */
+    .btn:hover{
+      background:white;
+      transform:translateY(-3px);
+    }
+
+    .btn2{
+      display:inline-block;
+      text-decoration:none;
+      background:transparent;
+      border:2px solid var(--dmk-yellow);
+      color:var(--dmk-yellow);
+      padding:12px 18px;
+      font-weight:bold;
+      border-radius:12px;
+      transition:0.3s;
+      font-size:14px;
+    }
+
+    .btn2:hover{
+      background:var(--dmk-yellow);
+      color:black;
+      transform:translateY(-3px);
+    }
+
+    /* MAIN IMAGE FIXED */
     .hero-img{
-        flex:1;
-        min-width:320px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
+      flex:1;
+      min-width:320px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
     .hero-img img{
-        width:420px;
-        max-width:95%;
-        height:auto;
-        border-radius:18px;
-        border:4px solid #ffeb3b;
-        box-shadow:0px 0px 30px rgba(255,235,59,0.4);
-        object-fit:contain;
-        background:#111;
-        padding:10px;
+      width:430px;
+      max-width:95%;
+      height:auto;
+      object-fit:contain;
+      border-radius:20px;
+      border:4px solid var(--dmk-yellow);
+      background:#111;
+      padding:10px;
+      box-shadow:0 0 35px rgba(255,235,59,0.25);
     }
 
-    /* SECTION STYLE */
+    /* SECTION */
     section{
-        padding:70px 20px;
-        max-width:1200px;
-        margin:auto;
+      padding:70px 20px;
+      max-width:1200px;
+      margin:auto;
     }
 
     section h2{
-        text-align:center;
-        font-size:32px;
-        color:#ffeb3b;
-        margin-bottom:25px;
-        text-transform:uppercase;
-        letter-spacing:1px;
+      text-align:center;
+      font-size:34px;
+      color:var(--dmk-yellow);
+      margin-bottom:25px;
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
 
-    .box{
-        background:#111;
-        border:1px solid #333;
-        border-radius:16px;
-        padding:25px;
-        margin-bottom:20px;
-        box-shadow:0px 0px 15px rgba(213,0,0,0.25);
-    }
-
-    .box p{
-        font-size:15px;
-        line-height:1.8;
-        color:#e0e0e0;
+    .para-box{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 0 18px rgba(213,0,0,0.18);
+      line-height:1.9;
+      color:var(--text-gray);
+      font-size:15px;
     }
 
     /* CARDS */
     .cards{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-        gap:20px;
-        margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:25px;
     }
 
     .card{
-        background:#0f0f0f;
-        border-radius:16px;
-        border:1px solid #333;
-        padding:20px;
-        text-align:center;
-        transition:0.3s;
+      background:#0f0f0f;
+      border:1px solid var(--border);
+      padding:20px;
+      border-radius:18px;
+      transition:0.3s;
+      box-shadow:0 0 14px rgba(0,0,0,0.6);
     }
+
     .card:hover{
-        transform:translateY(-6px);
-        border:1px solid #ffeb3b;
-        box-shadow:0px 0px 20px rgba(255,235,59,0.25);
+      transform:translateY(-6px);
+      border:1px solid var(--dmk-yellow);
+      box-shadow:0 0 20px rgba(255,235,59,0.2);
     }
 
     .card h3{
-        color:#ffeb3b;
-        margin-bottom:10px;
+      color:var(--dmk-yellow);
+      margin-bottom:10px;
+      font-size:18px;
     }
 
     .card p{
-        font-size:14px;
-        line-height:1.6;
-        color:#ccc;
+      color:#cccccc;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    /* HIGHLIGHTS */
+    .highlight{
+      margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+    }
+
+    .hl{
+      background:linear-gradient(140deg,#111,#1a0000);
+      border:1px solid #3a3a3a;
+      padding:20px;
+      border-radius:18px;
+    }
+
+    .hl h4{
+      color:var(--dmk-yellow);
+      font-size:17px;
+      margin-bottom:8px;
+    }
+
+    .hl ul{
+      margin-left:18px;
+      color:#ddd;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    /* NEWS */
+    .news-wrap{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+      gap:18px;
+      margin-top:25px;
+    }
+
+    .news{
+      background:#0f0f0f;
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .news:hover{
+      transform:translateY(-5px);
+      border:1px solid var(--dmk-yellow);
+    }
+
+    .news .top{
+      padding:14px;
+      background:linear-gradient(90deg,#000,#d50000);
+      font-weight:bold;
+      color:white;
+    }
+
+    .news .body{
+      padding:16px;
+      color:#ccc;
+      font-size:14px;
+      line-height:1.8;
     }
 
     /* GALLERY */
     .gallery{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-        gap:18px;
-        margin-top:25px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin-top:25px;
     }
 
     .gallery img{
-        width:100%;
-        height:240px;
-        object-fit:cover;
-        border-radius:15px;
-        border:2px solid #333;
-        transition:0.3s;
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      border-radius:16px;
+      border:2px solid #2a2a2a;
+      transition:0.3s;
+      cursor:pointer;
     }
 
     .gallery img:hover{
-        transform:scale(1.04);
-        border:2px solid #ffeb3b;
+      transform:scale(1.04);
+      border:2px solid var(--dmk-yellow);
     }
 
     /* CONTACT */
-    .contact-box{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-        gap:25px;
-        margin-top:30px;
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+      margin-top:25px;
     }
 
     input,textarea{
-        width:100%;
-        padding:12px;
-        border-radius:10px;
-        border:none;
-        outline:none;
-        margin-bottom:12px;
-        font-size:14px;
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:none;
+      outline:none;
+      margin-bottom:12px;
+      font-size:14px;
     }
 
-    textarea{height:120px;resize:none;}
+    textarea{
+      height:120px;
+      resize:none;
+    }
 
     .send-btn{
-        background:#ffeb3b;
-        color:black;
-        font-weight:bold;
-        border:none;
-        padding:12px;
-        width:100%;
-        border-radius:10px;
-        cursor:pointer;
-        transition:0.3s;
-    }
-    .send-btn:hover{
-        background:white;
-        transform:scale(1.03);
+      width:100%;
+      border:none;
+      background:var(--dmk-yellow);
+      color:black;
+      font-weight:bold;
+      padding:12px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:15px;
     }
 
+    .send-btn:hover{
+      background:white;
+      transform:scale(1.03);
+    }
+
+    /* FOOTER */
     footer{
-        background:#000;
-        text-align:center;
-        padding:18px;
-        border-top:2px solid #ffeb3b;
-        font-size:14px;
-        color:#aaa;
+      background:#000;
+      padding:18px;
+      text-align:center;
+      border-top:2px solid var(--dmk-yellow);
+      color:#aaa;
+      font-size:14px;
+    }
+
+    /* POPUP IMAGE VIEWER */
+    .popup{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.85);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:2000;
+      padding:20px;
+    }
+
+    .popup img{
+      max-width:92%;
+      max-height:92%;
+      border-radius:15px;
+      border:3px solid var(--dmk-yellow);
+    }
+
+    .popup span{
+      position:absolute;
+      top:20px;
+      right:25px;
+      font-size:35px;
+      color:white;
+      cursor:pointer;
+      font-weight:bold;
     }
 
     /* MOBILE */
     @media(max-width:768px){
-        .hero-content{
-            flex-direction:column;
-            text-align:center;
-        }
-        .hero-text h2{
-            font-size:30px;
-        }
-        .hero-img img{
-            width:330px;
-        }
-        nav{
-            justify-content:center;
-        }
+      .hero-text h2{font-size:32px;}
+      .hero-text h3{font-size:18px;}
+      nav a{font-size:12px;}
+      .hero-content{text-align:center;}
+      .hero-buttons{justify-content:center;}
     }
-</style>
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1 id="siteTitle">MLA ELANGOVAN | ARAVAKURICHI</h1>
+  <div class="logo-area">
+    <div class="sun-icon"></div>
+    <h1 id="siteTitle">
+      <span>MLA ELANGOVAN</span><br>
+      Aravakurichi Constituency | DMK
+    </h1>
+  </div>
 
-    <nav>
-        <a href="#home" id="menuHome">Home</a>
-        <a href="#about" id="menuAbout">About</a>
-        <a href="#vision" id="menuVision">Vision</a>
-        <a href="#work" id="menuWork">Public Works</a>
-        <a href="#gallery" id="menuGallery">Gallery</a>
-        <a href="#contact" id="menuContact">Contact</a>
-        <button class="lang-btn" onclick="toggleLanguage()">தமிழ் / English</button>
-    </nav>
+  <nav>
+    <a href="#home" id="mHome">Home</a>
+    <a href="#about" id="mAbout">About</a>
+    <a href="#vision" id="mVision">Vision</a>
+    <a href="#development" id="mDev">Development</a>
+    <a href="#schemes" id="mSchemes">Welfare</a>
+    <a href="#news" id="mNews">News</a>
+    <a href="#gallery" id="mGallery">Gallery</a>
+    <a href="#contact" id="mContact">Contact</a>
+    <button class="lang-btn" onclick="toggleLanguage()">தமிழ் / English</button>
+  </nav>
 </header>
 
 <!-- HERO -->
 <div class="hero" id="home">
-    <div class="flag-bg"></div>
+  <div class="hero-content">
 
-    <div class="hero-content">
+    <div class="hero-text">
+      <h2 id="heroTitle">Hon’ble MLA Thiru. Elangovan</h2>
+      <h3 id="heroSub">Member of Legislative Assembly | Aravakurichi | DMK</h3>
 
-        <div class="hero-text">
-            <h2 id="heroName">Hon’ble MLA Elangovan</h2>
-            <h3 id="heroDesignation">Aravakurichi Constituency | DMK Party</h3>
+      <p id="heroPara">
+        Welcome to the official website of Hon’ble MLA Thiru. Elangovan, representing the
+        Aravakurichi Legislative Assembly Constituency. This platform is developed to provide
+        transparent and detailed updates about constituency development works, welfare activities,
+        public grievance solutions, and the progress of government schemes under the leadership
+        of Dravida Munnetra Kazhagam (DMK).
+        <br><br>
+        This website aims to strengthen the connection between the MLA office and the people by
+        offering easy access to public service information, announcements, and important updates.
+      </p>
 
-            <p id="heroText">
-                Welcome to the official website of Honourable MLA Thiru. Elangovan,
-                representing Aravakurichi Legislative Assembly Constituency under the
-                leadership of Dravida Munnetra Kazhagam (DMK). This platform is created to
-                share constituency development updates, public welfare schemes, achievements,
-                and to connect directly with the people.
-            </p>
-
-            <a href="#contact" class="btn" id="heroBtn">Connect With MLA</a>
-        </div>
-
-        <div class="hero-img">
-            <!-- MAIN CENTER IMAGE -->
-            <img src="https://i.ibb.co/Wv4tdx7f/1001111453.jpg" alt="MLA Elangovan">
-        </div>
-
+      <div class="hero-buttons">
+        <a href="#contact" class="btn" id="btnContact">Meet / Contact MLA Office</a>
+        <a href="#development" class="btn2" id="btnWorks">View Development Works</a>
+      </div>
     </div>
+
+    <div class="hero-img">
+      <img src="https://i.ibb.co/Wv4tdx7f/1001111453.jpg" alt="MLA Elangovan">
+    </div>
+
+  </div>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
-    <h2 id="aboutTitle">About MLA</h2>
+  <h2 id="aboutTitle">About MLA Elangovan</h2>
 
-    <div class="box">
-        <p id="aboutText">
-            Thiru. Elangovan is the elected Member of Legislative Assembly (MLA) from
-            Aravakurichi Constituency and a dedicated leader of Dravida Munnetra Kazhagam (DMK).
-            With a strong commitment to public welfare, social justice, and inclusive development,
-            he actively works for the progress of the people of Aravakurichi.
-            <br><br>
-            His mission is to ensure that every citizen benefits from government welfare schemes,
-            infrastructure growth, employment opportunities, and quality education. He stands as a
-            true representative of the people, always approachable and service-minded.
-        </p>
+  <div class="para-box" id="aboutPara">
+    Thiru. Elangovan is a committed and service-minded political leader of the Dravida Munnetra
+    Kazhagam (DMK) and the elected Member of Legislative Assembly (MLA) representing the people
+    of Aravakurichi Constituency in Karur District, Tamil Nadu.
+    <br><br>
+    With a strong belief in social justice, equality, and inclusive growth, he continuously works
+    to improve infrastructure, education, healthcare access, rural development, and employment
+    opportunities. He actively engages with the public, listens to their grievances, and ensures
+    that government welfare schemes reach the deserving citizens.
+    <br><br>
+    His leadership reflects the values of the Dravidian movement, focusing on dignity, development,
+    and democratic governance. As a public representative, his primary objective is to serve the
+    people with transparency, responsibility, and dedication.
+  </div>
+
+  <div class="highlight">
+    <div class="hl">
+      <h4 id="ab1">Constituency Commitment</h4>
+      <ul id="ab1t">
+        <li>Regular public grievance meetings</li>
+        <li>Immediate action for basic needs issues</li>
+        <li>Development monitoring in villages and towns</li>
+      </ul>
     </div>
+
+    <div class="hl">
+      <h4 id="ab2">People Welfare Focus</h4>
+      <ul id="ab2t">
+        <li>Women empowerment programs</li>
+        <li>Support for farmers and agricultural growth</li>
+        <li>Assistance for students and youth</li>
+      </ul>
+    </div>
+
+    <div class="hl">
+      <h4 id="ab3">DMK Vision</h4>
+      <ul id="ab3t">
+        <li>Social justice and equality</li>
+        <li>Welfare-based governance</li>
+        <li>Development with dignity for all</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- VISION -->
 <section id="vision">
-    <h2 id="visionTitle">Vision & Mission</h2>
+  <h2 id="visionTitle">Vision, Mission & Leadership</h2>
 
-    <div class="cards">
-        <div class="card">
-            <h3 id="v1">People First Governance</h3>
-            <p id="v1t">
-                To ensure every citizen receives equal respect, equal opportunity and access to welfare schemes.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3 id="v2">Infrastructure Development</h3>
-            <p id="v2t">
-                Strengthening roads, drinking water supply, drainage systems, and modern facilities in villages and towns.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3 id="v3">Youth Empowerment</h3>
-            <p id="v3t">
-                Supporting students and youth through education guidance, employment awareness, and skill development programs.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3 id="v4">Social Justice</h3>
-            <p id="v4t">
-                Protecting equality and dignity for all communities by following DMK principles and Dravidian ideology.
-            </p>
-        </div>
+  <div class="cards">
+    <div class="card">
+      <h3 id="v1">People-First Governance</h3>
+      <p id="v1t">
+        To ensure every citizen receives respect, equal opportunity, and access to government welfare
+        schemes without discrimination, while building trust between people and administration.
+      </p>
     </div>
+
+    <div class="card">
+      <h3 id="v2">Infrastructure Strengthening</h3>
+      <p id="v2t">
+        To modernize the constituency through improved roads, drainage systems, drinking water
+        pipelines, public transport support, and smart village planning.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 id="v3">Youth & Education Development</h3>
+      <p id="v3t">
+        To guide students and youth through educational support, scholarship awareness, skill development
+        training, and employment-based initiatives.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 id="v4">Social Justice & Welfare</h3>
+      <p id="v4t">
+        To uphold Dravidian ideology by ensuring dignity for all communities and empowering the poor,
+        marginalized, women, and senior citizens.
+      </p>
+    </div>
+  </div>
 </section>
 
-<!-- WORKS -->
-<section id="work">
-    <h2 id="workTitle">Constituency Development & Public Works</h2>
+<!-- DEVELOPMENT -->
+<section id="development">
+  <h2 id="devTitle">Constituency Development Activities</h2>
 
-    <div class="box">
-        <p id="workText">
-            As MLA of Aravakurichi, Thiru. Elangovan continues to focus on public welfare and development activities.
-            The major areas of focus include:
-            <br><br>
-            ✔ Road development and village connectivity improvement<br>
-            ✔ Drinking water projects and borewell initiatives<br>
-            ✔ Street lighting and sanitation improvements<br>
-            ✔ Educational support for students and government school upgrades<br>
-            ✔ Welfare assistance for women, farmers, workers and senior citizens<br>
-            ✔ Medical camp arrangements and health scheme awareness<br>
-            ✔ Support for self-help groups (SHGs) and rural entrepreneurship<br><br>
-            This website will continuously update about new announcements, public meetings, and constituency progress.
-        </p>
+  <div class="para-box" id="devPara">
+    Aravakurichi constituency development is based on long-term planning and public needs assessment.
+    Thiru. Elangovan ensures that every village and town receives equal priority in development works.
+    Key focus areas include road improvements, water supply, sanitation, public buildings, educational
+    institutions, and rural employment growth.
+    <br><br>
+    Through constant monitoring and coordination with government departments, the MLA office works
+    to accelerate approvals and ensure timely completion of development projects. Special importance
+    is given to public safety, rural infrastructure, and basic facilities for the common people.
+  </div>
+
+  <div class="highlight">
+    <div class="hl">
+      <h4 id="d1">Road & Transport Development</h4>
+      <ul id="d1t">
+        <li>Improvement of rural roads and village connectivity</li>
+        <li>Maintenance and repair of damaged road sections</li>
+        <li>Better access roads to schools, hospitals, and markets</li>
+      </ul>
     </div>
+
+    <div class="hl">
+      <h4 id="d2">Water & Sanitation Projects</h4>
+      <ul id="d2t">
+        <li>Drinking water pipeline expansion</li>
+        <li>Borewell support and water tank renovation</li>
+        <li>Drainage cleaning and sanitation awareness</li>
+      </ul>
+    </div>
+
+    <div class="hl">
+      <h4 id="d3">Public Infrastructure</h4>
+      <ul id="d3t">
+        <li>Street light installation and maintenance</li>
+        <li>Community hall improvement projects</li>
+        <li>Government building renovation support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WELFARE SCHEMES -->
+<section id="schemes">
+  <h2 id="schemeTitle">Government Welfare & Public Service</h2>
+
+  <div class="para-box" id="schemePara">
+    The Government of Tamil Nadu under the leadership of DMK is implementing multiple welfare schemes
+    for women, farmers, students, workers, and senior citizens. MLA Thiru. Elangovan actively ensures
+    that these schemes reach every deserving beneficiary in Aravakurichi constituency.
+    <br><br>
+    The MLA office supports the public by providing guidance for scheme applications, document preparation,
+    grievance submission, and follow-up with government departments.
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3 id="s1">Women Welfare & Empowerment</h3>
+      <p id="s1t">
+        Support for women self-help groups, welfare assistance, entrepreneurship development, and guidance
+        for government schemes designed to empower women economically and socially.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 id="s2">Farmer Support & Agriculture Growth</h3>
+      <p id="s2t">
+        Awareness programs for farmers, subsidy guidance, irrigation support, agricultural loan facilitation,
+        and promotion of modern farming techniques for rural prosperity.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 id="s3">Education & Student Welfare</h3>
+      <p id="s3t">
+        Scholarship awareness, school development initiatives, student counseling programs, and support for
+        government education schemes ensuring equal opportunities.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 id="s4">Healthcare & Medical Camps</h3>
+      <p id="s4t">
+        Organizing medical camps, helping citizens access health insurance schemes, and supporting hospital
+        facility improvement in the constituency.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <h2 id="newsTitle">News & Latest Updates</h2>
+
+  <div class="news-wrap">
+    <div class="news">
+      <div class="top" id="n1t">Public Grievance Meeting</div>
+      <div class="body" id="n1">
+        MLA Thiru. Elangovan conducts regular grievance meetings to hear public issues and ensures that
+        immediate solutions are provided through concerned departments.
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="top" id="n2t">Development Review Works</div>
+      <div class="body" id="n2">
+        Continuous monitoring of road works, water supply projects, drainage improvements and village
+        infrastructure upgrades are carried out for quality and timely completion.
+      </div>
+    </div>
+
+    <div class="news">
+      <div class="top" id="n3t">Welfare Scheme Awareness</div>
+      <div class="body" id="n3">
+        Awareness programs are organized to guide citizens about DMK Government welfare schemes for women,
+        students, farmers, and senior citizens.
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
-    <h2 id="galleryTitle">Gallery</h2>
+  <h2 id="galleryTitle">Photo Gallery</h2>
 
-    <div class="gallery">
-        <img src="https://i.ibb.co/Wv4tdx7f/1001111453.jpg" alt="Photo 1">
-        <img src="https://i.ibb.co/VWb81GXw/1001111461.jpg" alt="Photo 2">
-        <img src="https://i.ibb.co/LzvKP6wY/1001111466.jpg" alt="Photo 3">
-        <img src="https://i.ibb.co/gLycL5gJ/1001111456.jpg" alt="Photo 4">
-        <img src="https://i.ibb.co/mrttnMnL/IMG-20260218-WA0000.jpg" alt="Photo 5">
-        <img src="https://i.ibb.co/HLLGMzqV/IMG-20260218-WA0001.jpg" alt="Photo 6">
-        <img src="https://i.ibb.co/ZRGgt7Wg/IMG-20260218-WA0003.jpg" alt="Photo 7">
-        <img src="https://i.ibb.co/5h6xCG98/IMG-20260218-WA0002.jpg" alt="Photo 8">
-    </div>
+  <div class="gallery">
+    <img src="https://i.ibb.co/Wv4tdx7f/1001111453.jpg" onclick="openPopup(this.src)" alt="Photo1">
+    <img src="https://i.ibb.co/VWb81GXw/1001111461.jpg" onclick="openPopup(this.src)" alt="Photo2">
+    <img src="https://i.ibb.co/LzvKP6wY/1001111466.jpg" onclick="openPopup(this.src)" alt="Photo3">
+    <img src="https://i.ibb.co/gLycL5gJ/1001111456.jpg" onclick="openPopup(this.src)" alt="Photo4">
+
+    <img src="https://i.ibb.co/mrttnMnL/IMG-20260218-WA0000.jpg" onclick="openPopup(this.src)" alt="Photo5">
+    <img src="https://i.ibb.co/HLLGMzqV/IMG-20260218-WA0001.jpg" onclick="openPopup(this.src)" alt="Photo6">
+    <img src="https://i.ibb.co/ZRGgt7Wg/IMG-20260218-WA0003.jpg" onclick="openPopup(this.src)" alt="Photo7">
+    <img src="https://i.ibb.co/5h6xCG98/IMG-20260218-WA0002.jpg" onclick="openPopup(this.src)" alt="Photo8">
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2 id="contactTitle">Contact MLA Office</h2>
+  <h2 id="contactTitle">Contact MLA Office</h2>
 
-    <div class="contact-box">
-        <div class="box">
-            <p id="contactText">
-                You can directly reach the office of MLA Elangovan for constituency-related requests,
-                public welfare support, grievance submissions, and development proposals.
-                <br><br>
-                📍 Office Address: Aravakurichi, Karur District, Tamil Nadu<br>
-                📞 Phone: +91 9994149666<br>
-                ✉ Email: mlaelangovan@gmail.com
-                <br><br>
-                Please submit your request through the contact form.
-            </p>
-        </div>
-
-        <div class="box">
-            <form onsubmit="sendWhatsApp(); return false;">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="text" id="mobile" placeholder="Mobile Number" required>
-                <textarea id="message" placeholder="Your Message / Request" required></textarea>
-                <button class="send-btn" id="sendBtn">Send Message via WhatsApp</button>
-            </form>
-        </div>
+  <div class="contact-grid">
+    <div class="para-box" id="contactPara">
+      You can contact the MLA office for constituency-related requests, development proposals, grievance submissions,
+      welfare scheme guidance, and emergency assistance.
+      <br><br>
+      <b>Office Location:</b> Aravakurichi, Karur District, Tamil Nadu<br>
+      <b>Working Hours:</b> 10:00 AM to 6:00 PM (All Working Days)<br>
+      <b>Email:</b> mlaelangovan@gmail.com<br>
+      <br>
+      Please submit your request using the form. Your message will be redirected through WhatsApp for quick response.
     </div>
+
+    <div class="para-box">
+      <form onsubmit="sendWhatsApp(); return false;">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="mobile" placeholder="Mobile Number" required>
+        <textarea id="message" placeholder="Your Request / Complaint / Suggestion" required></textarea>
+        <button class="send-btn" id="sendBtn">Send Message via WhatsApp</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-    <p id="footerText">© 2026 MLA Elangovan - Aravakurichi | DMK | All Rights Reserved</p>
+  <p id="footerText">© 2026 MLA Elangovan - Aravakurichi | DMK | All Rights Reserved</p>
 </footer>
 
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <span onclick="closePopup()">&times;</span>
+  <img id="popupImg" src="">
+</div>
+
 <script>
-    let currentLang = "EN";
+  let lang = "EN";
 
-    function toggleLanguage(){
-        if(currentLang === "EN"){
-            currentLang = "TA";
+  function toggleLanguage(){
+    if(lang==="EN"){
+      lang="TA";
 
-            document.getElementById("siteTitle").innerHTML="அரவக்குறிச்சி சட்டமன்ற உறுப்பினர் | இளங்கோவன்";
-            document.getElementById("menuHome").innerHTML="முகப்பு";
-            document.getElementById("menuAbout").innerHTML="எங்களை பற்றி";
-            document.getElementById("menuVision").innerHTML="நோக்கம்";
-            document.getElementById("menuWork").innerHTML="சேவைகள்";
-            document.getElementById("menuGallery").innerHTML="புகைப்படங்கள்";
-            document.getElementById("menuContact").innerHTML="தொடர்பு";
+      document.getElementById("siteTitle").innerHTML="<span>சட்டமன்ற உறுப்பினர் இளங்கோவன்</span><br>அரவக்குறிச்சி தொகுதி | திமுக";
+      document.getElementById("mHome").innerHTML="முகப்பு";
+      document.getElementById("mAbout").innerHTML="அறிமுகம்";
+      document.getElementById("mVision").innerHTML="நோக்கம்";
+      document.getElementById("mDev").innerHTML="வளர்ச்சி பணிகள்";
+      document.getElementById("mSchemes").innerHTML="நலத்திட்டங்கள்";
+      document.getElementById("mNews").innerHTML="செய்திகள்";
+      document.getElementById("mGallery").innerHTML="புகைப்படங்கள்";
+      document.getElementById("mContact").innerHTML="தொடர்பு";
 
-            document.getElementById("heroName").innerHTML="மாண்புமிகு சட்டமன்ற உறுப்பினர் இளங்கோவன்";
-            document.getElementById("heroDesignation").innerHTML="அரவக்குறிச்சி தொகுதி | திமுக";
-            document.getElementById("heroText").innerHTML=
-            "அரவக்குறிச்சி தொகுதியின் மாண்புமிகு சட்டமன்ற உறுப்பினர் திரு. இளங்கோவன் அவர்களின் அதிகாரப்பூர்வ இணையதளத்திற்கு உங்களை வரவேற்கிறோம். இந்த தளம் பொதுமக்களுக்கு அரசு திட்டங்கள், மக்கள் நலப் பணிகள், வளர்ச்சி நடவடிக்கைகள் மற்றும் தொகுதி தகவல்களை நேரடியாக வழங்கும் நோக்கில் உருவாக்கப்பட்டுள்ளது.";
-            document.getElementById("heroBtn").innerHTML="தொடர்பு கொள்ள";
+      document.getElementById("heroTitle").innerHTML="மாண்புமிகு சட்டமன்ற உறுப்பினர் திரு. இளங்கோவன்";
+      document.getElementById("heroSub").innerHTML="சட்டமன்ற உறுப்பினர் | அரவக்குறிச்சி | திமுக";
 
-            document.getElementById("aboutTitle").innerHTML="சட்டமன்ற உறுப்பினர் பற்றி";
-            document.getElementById("aboutText").innerHTML=
-            "திரு. இளங்கோவன் அவர்கள் அரவக்குறிச்சி சட்டமன்ற தொகுதியின் மக்கள் பிரதிநிதியாக தேர்ந்தெடுக்கப்பட்ட திமுக தலைவர்களில் ஒருவர். மக்கள் நலன், சமூக நீதி, சமத்துவ வளர்ச்சி ஆகியவற்றில் மிகுந்த அக்கறையுடன் செயல்பட்டு வருகிறார். <br><br>அரவக்குறிச்சி மக்களுக்கு அரசு நலத் திட்டங்கள், கல்வி உதவிகள், வேலை வாய்ப்புகள், அடிப்படை வசதிகள் மேம்பாடு போன்றவற்றை கொண்டு சேர்ப்பதே அவரது முதன்மை நோக்கமாகும்.";
+      document.getElementById("heroPara").innerHTML=
+      "அரவக்குறிச்சி தொகுதியின் மாண்புமிகு சட்டமன்ற உறுப்பினர் திரு. இளங்கோவன் அவர்களின் அதிகாரப்பூர்வ இணையதளத்திற்கு உங்களை அன்புடன் வரவேற்கிறோம். " +
+      "இந்த தளம் தொகுதி வளர்ச்சி பணிகள், பொதுமக்கள் நலத்திட்டங்கள், மக்கள் குறை தீர்க்கும் சேவைகள் மற்றும் அரசின் திட்ட முன்னேற்றங்களை " +
+      "விரிவாகவும் வெளிப்படையாகவும் வழங்கும் நோக்கில் உருவாக்கப்பட்டுள்ளது." +
+      "<br><br>" +
+      "மக்களுக்கும் சட்டமன்ற உறுப்பினர் அலுவலகத்திற்கும் இடையிலான தொடர்பை வலுப்படுத்தும் வகையில் இந்த இணையதளம் அமைக்கப்பட்டுள்ளது. " +
+      "மக்களின் கோரிக்கைகள், ஆலோசனைகள் மற்றும் பிரச்சினைகள் தொடர்பாக விரைவான தீர்வு பெற இந்த தளம் பயன்படும்.";
 
-            document.getElementById("visionTitle").innerHTML="நோக்கம் மற்றும் இலக்கு";
-            document.getElementById("v1").innerHTML="மக்கள் முன்னேற்ற ஆட்சி";
-            document.getElementById("v1t").innerHTML="ஒவ்வொரு குடிமகனுக்கும் சம உரிமை மற்றும் அரசு நலத் திட்டங்கள் கிடைக்க உறுதி செய்தல்.";
-            document.getElementById("v2").innerHTML="அடித்தள வசதிகள் மேம்பாடு";
-            document.getElementById("v2t").innerHTML="சாலைகள், குடிநீர், கழிவுநீர் வசதி மற்றும் கிராம வளர்ச்சியை மேம்படுத்துதல்.";
-            document.getElementById("v3").innerHTML="இளைஞர் முன்னேற்றம்";
-            document.getElementById("v3t").innerHTML="கல்வி வழிகாட்டுதல், வேலைவாய்ப்பு விழிப்புணர்வு மற்றும் திறன் மேம்பாட்டு திட்டங்கள்.";
-            document.getElementById("v4").innerHTML="சமூக நீதி";
-            document.getElementById("v4t").innerHTML="திமுக கொள்கைகளின் அடிப்படையில் சமத்துவம் மற்றும் சமூக நீதியை பாதுகாத்தல்.";
+      document.getElementById("btnContact").innerHTML="அலுவலகத்தை தொடர்பு கொள்ள";
+      document.getElementById("btnWorks").innerHTML="வளர்ச்சி பணிகளை பார்க்க";
 
-            document.getElementById("workTitle").innerHTML="தொகுதி வளர்ச்சி பணிகள்";
-            document.getElementById("workText").innerHTML=
-            "அரவக்குறிச்சி தொகுதி சட்டமன்ற உறுப்பினராக திரு. இளங்கோவன் அவர்கள் தொடர்ந்து மக்கள் நலப் பணிகளில் ஈடுபட்டு வருகிறார். முக்கிய பணிகள்:<br><br>✔ சாலை வசதி மேம்பாடு<br>✔ குடிநீர் திட்டங்கள் மற்றும் ஆழ்துளை கிணறு பணிகள்<br>✔ தெருவிளக்கு மற்றும் சுகாதார வசதி<br>✔ பள்ளி வளர்ச்சி மற்றும் மாணவர்களுக்கு கல்வி உதவி<br>✔ பெண்கள், விவசாயிகள் மற்றும் மூத்த குடிமக்களுக்கு நலத் திட்ட உதவிகள்<br>✔ மருத்துவ முகாம் மற்றும் அரசு திட்ட விழிப்புணர்வு<br>✔ சுய உதவி குழுக்கள் வளர்ச்சி<br><br>இந்த இணையதளத்தில் தொடர்ந்து புதிய தகவல்கள் மற்றும் வளர்ச்சி பணிகள் புதுப்பிக்கப்படும்.";
+      document.getElementById("aboutTitle").innerHTML="சட்டமன்ற உறுப்பினர் இளங்கோவன் பற்றி";
+      document.getElementById("aboutPara").innerHTML=
+      "திரு. இளங்கோவன் அவர்கள் திமுகவின் சேவையுணர்வுள்ள முன்னணி தலைவராகவும், அரவக்குறிச்சி சட்டமன்ற தொகுதியின் மக்கள் பிரதிநிதியாகவும் செயல்பட்டு வருகிறார். " +
+      "கரூர் மாவட்டத்தின் அரவக்குறிச்சி பகுதிகளில் சமூக நீதி, சமத்துவம் மற்றும் வளர்ச்சி ஆகியவற்றை முன்னிறுத்தி மக்கள் சேவையில் முழுமையாக ஈடுபட்டு வருகிறார்." +
+      "<br><br>" +
+      "கல்வி, சுகாதாரம், குடிநீர் வசதி, சாலை வசதி, விவசாய வளர்ச்சி மற்றும் வேலைவாய்ப்பு மேம்பாடு போன்ற துறைகளில் மக்கள் தேவையை அறிந்து " +
+      "அவற்றை நிறைவேற்றுவதற்கான நடவடிக்கைகளை தொடர்ச்சியாக முன்னெடுத்து வருகிறார்." +
+      "<br><br>" +
+      "திராவிட இயக்கத்தின் கொள்கைகளை அடிப்படையாக கொண்டு மக்கள் நலன் சார்ந்த திட்டங்களை விரைவாக தொகுதியில் செயல்படுத்துவதும், " +
+      "அனைத்து தரப்பு மக்களுக்கும் உரிய மரியாதையும் பாதுகாப்பும் கிடைக்கச் செய்வதும் இவரது முக்கிய நோக்கமாகும்.";
 
-            document.getElementById("galleryTitle").innerHTML="புகைப்பட தொகுப்பு";
+      document.getElementById("ab1").innerHTML="தொகுதி பொறுப்புணர்வு";
+      document.getElementById("ab1t").innerHTML="<li>பொது மக்கள் குறை தீர்க்கும் கூட்டங்கள்</li><li>அடிப்படை வசதிகளுக்கான உடனடி நடவடிக்கை</li><li>கிராம மற்றும் நகர வளர்ச்சி கண்காணிப்பு</li>";
 
-            document.getElementById("contactTitle").innerHTML="தொடர்பு கொள்ள";
-            document.getElementById("contactText").innerHTML=
-            "அரவக்குறிச்சி தொகுதி தொடர்பான கோரிக்கைகள், பொதுமக்கள் புகார்கள், அரசு நலத் திட்ட உதவி மற்றும் வளர்ச்சி ஆலோசனைகள் ஆகியவற்றிற்கு சட்டமன்ற உறுப்பினர் அலுவலகத்தை தொடர்பு கொள்ளலாம்.<br><br>📍 அலுவலக முகவரி: அரவக்குறிச்சி, கரூர் மாவட்டம், தமிழ்நாடு<br>📞 தொலைபேசி: +91 XXXXXXXXXX<br>✉ மின்னஞ்சல்: mlaelangovan@gmail.com<br><br>கீழே உள்ள படிவத்தின் மூலம் உங்கள் கோரிக்கையை அனுப்பலாம்.";
+      document.getElementById("ab2").innerHTML="மக்கள் நல முன்னுரிமை";
+      document.getElementById("ab2t").innerHTML="<li>பெண்கள் முன்னேற்ற திட்டங்கள்</li><li>விவசாயிகள் நலன் மற்றும் ஆதரவு</li><li>மாணவர்கள் மற்றும் இளைஞர்களுக்கு உதவி</li>";
 
-            document.getElementById("sendBtn").innerHTML="WhatsApp மூலம் அனுப்பு";
-            document.getElementById("footerText").innerHTML="© 2026 இளங்கோவன் - அரவக்குறிச்சி | திமுக | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை";
-        }
-        else{
-            location.reload();
-        }
+      document.getElementById("ab3").innerHTML="திமுக கொள்கை வழி வளர்ச்சி";
+      document.getElementById("ab3t").innerHTML="<li>சமூக நீதி மற்றும் சமத்துவம்</li><li>மக்கள் நல ஆட்சி</li><li>அனைவருக்கும் வளர்ச்சி</li>";
+
+      document.getElementById("visionTitle").innerHTML="நோக்கம், இலக்கு மற்றும் தலைமை";
+      document.getElementById("v1").innerHTML="மக்கள் முன்னேற்ற ஆட்சி";
+      document.getElementById("v1t").innerHTML="ஒவ்வொரு குடிமகனுக்கும் உரிய மரியாதையும் சம உரிமையும் கிடைக்கச் செய்வதுடன், அரசு நலத்திட்டங்கள் அனைவருக்கும் சென்றடைய உறுதி செய்தல்.";
+      document.getElementById("v2").innerHTML="அடித்தள வசதி மேம்பாடு";
+      document.getElementById("v2t").innerHTML="சாலை, குடிநீர், வடிகால் வசதி, கிராம வளர்ச்சி திட்டங்கள் மற்றும் நகரமைப்பு மேம்பாடுகளை செயல்படுத்துதல்.";
+      document.getElementById("v3").innerHTML="இளைஞர் மற்றும் கல்வி முன்னேற்றம்";
+      document.getElementById("v3t").innerHTML="மாணவர்களுக்கு கல்வி வழிகாட்டுதல், திறன் மேம்பாட்டு பயிற்சி மற்றும் வேலைவாய்ப்பு உருவாக்க திட்டங்கள்.";
+      document.getElementById("v4").innerHTML="சமூக நீதி மற்றும் மக்கள் நலம்";
+      document.getElementById("v4t").innerHTML="திராவிட இயக்க கொள்கைகளை அடிப்படையாக கொண்டு பெண்கள், ஏழைகள் மற்றும் ஒடுக்கப்பட்டவர்களுக்கு நல உதவிகள் வழங்குதல்.";
+
+      document.getElementById("devTitle").innerHTML="தொகுதி வளர்ச்சி பணிகள்";
+      document.getElementById("devPara").innerHTML=
+      "அரவக்குறிச்சி தொகுதியின் வளர்ச்சி என்பது நீண்டகால திட்டமிடல் மற்றும் பொதுமக்கள் தேவையை அடிப்படையாக கொண்டதாகும். " +
+      "திரு. இளங்கோவன் அவர்கள் அனைத்து கிராமங்களுக்கும் சம அளவில் வளர்ச்சி முன்னுரிமை வழங்கி சாலை வசதி, குடிநீர், சுகாதாரம், " +
+      "பள்ளிகள் மற்றும் அரசு கட்டிட வசதிகளை மேம்படுத்துவதில் முக்கிய பங்கு வகித்து வருகிறார்." +
+      "<br><br>" +
+      "அரசு துறைகளுடன் ஒருங்கிணைந்து திட்ட ஒப்புதல் பெறுவதும், பணிகள் தரமாகவும் நேரத்திற்குள் முடிவடைவதும் உறுதி செய்யப்படுகிறது.";
+
+      document.getElementById("d1").innerHTML="சாலை மற்றும் போக்குவரத்து மேம்பாடு";
+      document.getElementById("d1t").innerHTML="<li>கிராம சாலைகள் மேம்பாடு</li><li>சேதமான சாலைகள் பழுது நீக்கம்</li><li>பள்ளி, மருத்துவமனை, சந்தை அணுகுமுறை சாலை வசதி</li>";
+
+      document.getElementById("d2").innerHTML="குடிநீர் மற்றும் சுகாதார திட்டங்கள்";
+      document.getElementById("d2t").innerHTML="<li>குடிநீர் குழாய் விரிவாக்கம்</li><li>ஆழ்துளை கிணறு மற்றும் நீர் தொட்டி பணிகள்</li><li>வடிகால் சுத்தம் மற்றும் சுகாதார விழிப்புணர்வு</li>";
+
+      document.getElementById("d3").innerHTML="பொது வசதி மேம்பாடு";
+      document.getElementById("d3t").innerHTML="<li>தெருவிளக்கு அமைத்தல் மற்றும் பராமரிப்பு</li><li>சமூக கூடம் மேம்பாடு</li><li>அரசு கட்டிடங்கள் புதுப்பிப்பு</li>";
+
+      document.getElementById("schemeTitle").innerHTML="அரசு நலத்திட்டங்கள் மற்றும் மக்கள் சேவை";
+      document.getElementById("schemePara").innerHTML=
+      "தமிழ்நாடு அரசு திமுக தலைமையில் பெண்கள், விவசாயிகள், மாணவர்கள், தொழிலாளர்கள் மற்றும் மூத்த குடிமக்களுக்கான பல்வேறு நலத்திட்டங்களை செயல்படுத்தி வருகிறது. " +
+      "திரு. இளங்கோவன் அவர்கள் இத்திட்டங்கள் அரவக்குறிச்சி தொகுதி மக்களுக்கு முழுமையாக சென்றடைய உறுதி செய்து வருகிறார்." +
+      "<br><br>" +
+      "நலத்திட்ட விண்ணப்ப வழிகாட்டுதல், ஆவண உதவி, குறை தீர்க்கும் நடவடிக்கை மற்றும் அரசு துறைகளுடன் தொடர்பு ஏற்படுத்துதல் போன்ற சேவைகள் வழங்கப்படுகின்றன.";
+
+      document.getElementById("s1").innerHTML="பெண்கள் நலன் மற்றும் முன்னேற்றம்";
+      document.getElementById("s1t").innerHTML="பெண்கள் சுய உதவி குழுக்கள், தொழில் முனைவோர் ஆதரவு, நல உதவிகள் மற்றும் அரசு திட்ட வழிகாட்டுதல் மூலம் பெண்களை பொருளாதார ரீதியாக வலுப்படுத்துதல்.";
+
+      document.getElementById("s2").innerHTML="விவசாயிகள் நலன் மற்றும் வளர்ச்சி";
+      document.getElementById("s2t").innerHTML="மானியம், கடன் உதவி, பாசன திட்டங்கள் மற்றும் விவசாய விழிப்புணர்வு நிகழ்ச்சிகள் மூலம் விவசாய வளர்ச்சியை ஊக்குவித்தல்.";
+
+      document.getElementById("s3").innerHTML="மாணவர் நலன் மற்றும் கல்வி உதவி";
+      document.getElementById("s3t").innerHTML="மாணவர்களுக்கு உதவித்தொகை தகவல், பள்ளி மேம்பாடு, கல்வி ஆலோசனை மற்றும் சம வாய்ப்பு வழங்கும் கல்வி திட்டங்கள்.";
+
+      document.getElementById("s4").innerHTML="சுகாதாரம் மற்றும் மருத்துவ முகாம்";
+      document.getElementById("s4t").innerHTML="மருத்துவ முகாம்கள், அரசு காப்பீட்டு திட்ட வழிகாட்டுதல் மற்றும் மருத்துவ வசதி மேம்பாடு மூலம் மக்கள் நலனை உறுதி செய்தல்.";
+
+      document.getElementById("newsTitle").innerHTML="செய்திகள் மற்றும் புதிய தகவல்கள்";
+      document.getElementById("n1t").innerHTML="மக்கள் குறை தீர்க்கும் கூட்டம்";
+      document.getElementById("n1").innerHTML="திரு. இளங்கோவன் அவர்கள் அடிக்கடி மக்கள் குறை தீர்க்கும் கூட்டங்களை நடத்தி, பொதுமக்களின் பிரச்சினைகளை கேட்டறிந்து உடனடி தீர்வு வழங்க நடவடிக்கை எடுத்து வருகிறார்.";
+
+      document.getElementById("n2t").innerHTML="வளர்ச்சி பணிகள் ஆய்வு";
+      document.getElementById("n2").innerHTML="சாலை, குடிநீர், வடிகால் மற்றும் கிராம வளர்ச்சி பணிகளை நேரில் ஆய்வு செய்து தரமான நிறைவேற்றத்தை உறுதி செய்கிறார்.";
+
+      document.getElementById("n3t").innerHTML="நலத்திட்ட விழிப்புணர்வு";
+      document.getElementById("n3").innerHTML="பெண்கள், மாணவர்கள், விவசாயிகள் மற்றும் மூத்த குடிமக்கள் பயன்பெறும் வகையில் அரசு நலத்திட்ட விழிப்புணர்வு நிகழ்ச்சிகள் நடத்தப்படுகின்றன.";
+
+      document.getElementById("galleryTitle").innerHTML="புகைப்பட தொகுப்பு";
+
+      document.getElementById("contactTitle").innerHTML="தொடர்பு கொள்ள";
+      document.getElementById("contactPara").innerHTML=
+      "தொகுதி வளர்ச்சி கோரிக்கைகள், பொதுமக்கள் புகார்கள், நலத்திட்ட உதவி மற்றும் அவசர உதவி தொடர்பாக சட்டமன்ற உறுப்பினர் அலுவலகத்தை தொடர்பு கொள்ளலாம்." +
+      "<br><br><b>அலுவலக முகவரி:</b> அரவக்குறிச்சி, கரூர் மாவட்டம், தமிழ்நாடு<br>" +
+      "<b>அலுவலக நேரம்:</b> காலை 10:00 முதல் மாலை 6:00 வரை<br>" +
+      "<b>மின்னஞ்சல்:</b> mlaelangovan@gmail.com<br><br>" +
+      "கீழே உள்ள படிவத்தின் மூலம் உங்கள் கோரிக்கையை அனுப்பலாம். WhatsApp மூலம் விரைவான பதில் பெறலாம்.";
+
+      document.getElementById("sendBtn").innerHTML="WhatsApp மூலம் அனுப்பு";
+      document.getElementById("footerText").innerHTML="© 2026 சட்டமன்ற உறுப்பினர் இளங்கோவன் - அரவக்குறிச்சி | திமுக | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை";
+
+    } else {
+      location.reload();
     }
+  }
 
-    function sendWhatsApp(){
-        let name=document.getElementById("name").value;
-        let mobile=document.getElementById("mobile").value;
-        let msg=document.getElementById("message").value;
+  function sendWhatsApp(){
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let message = document.getElementById("message").value;
 
-        let phone="919994149666"; // Change MLA Office WhatsApp Number
+    let phone = "919994149666"; // CHANGE THIS NUMBER TO MLA OFFICE WHATSAPP NUMBER
 
-        let url="https://wa.me/"+phone+"?text="
-        +"Name: "+name+"%0A"
-        +"Mobile: "+mobile+"%0A"
-        +"Message: "+msg;
+    let url = "https://wa.me/" + phone + "?text="
+      + "Name: " + encodeURIComponent(name) + "%0A"
+      + "Mobile: " + encodeURIComponent(mobile) + "%0A"
+      + "Message: " + encodeURIComponent(message);
 
-        window.open(url,"_blank");
-    }
+    window.open(url, "_blank");
+  }
+
+  function openPopup(src){
+    document.getElementById("popup").style.display="flex";
+    document.getElementById("popupImg").src=src;
+  }
+
+  function closePopup(){
+    document.getElementById("popup").style.display="none";
+  }
 </script>
 
 </body>
